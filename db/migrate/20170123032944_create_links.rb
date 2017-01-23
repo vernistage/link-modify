@@ -3,7 +3,6 @@ class CreateLinks < ActiveRecord::Migration[5.0]
     create_table :links do |t|
       t.string :entry
       t.string :destination
-      t.string :phone_num
 
       t.timestamps
     end

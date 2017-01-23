@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20170123032944) do
   create_table "links", force: :cascade do |t|
     t.string   "entry"
     t.string   "destination"
-    t.string   "phone_num"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
