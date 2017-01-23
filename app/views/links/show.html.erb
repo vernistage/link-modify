@@ -10,12 +10,12 @@
 
 <p>
 	<strong>Send this link to your phone!</strong>
-
-<%= form_for @article, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :body, size: "60x12" %>
-  <%= f.submit "Create" %>
-<% end %>
+	<%= form_tag("/send_sms", method: "post") do %>
+		<%= hidden_field_tag 'link_id', @link.id %>
+	  <%= label_tag(:number, "Enter your number") %>
+	  <%= text_field_tag(:number) %>
+	  <%= submit_tag("Submit") %>
+	<% end %>
 </p>
 
 <%= link_to 'Edit', edit_link_path(@link) %>
