@@ -1,0 +1,12 @@
+<p>
+	<strong>Entry:</strong>
+	<%= @link.entry %>
+</p>
+
+<p>
+	<strong>Original Link:</strong>
+	<%= @link.destination %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@link) %>
+<%= link_to 'Back', posts_path %>
