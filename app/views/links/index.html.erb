@@ -1,13 +1,15 @@
 <h1>Submissions</h1>
 
 <%= link_to 'Add a new link', new_link_path %>
-	<% @links.each do |link| %>
+<% if @links %>
 	<ul>
-		<li>Entry: <%= link.entry %>
-			<p>Destination: <%= link.destination %></p>
-			<p><%= link_to 'Show', link_path(link) %> | <%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Delete', link_path(link),
-					method: :delete,
-					data: { confirm: 'Are you sure' } %></p>
-		</li>
+		<% @links.each do |link| %>
+				<li>Entry: <%= link.entry %>
+					<p>Destination: <%= link.destination %></p>
+					<p><%= link_to 'Show', link_path(link) %> | <%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Delete', link_path(link),
+							method: :delete,
+							data: { confirm: 'Are you sure' } %></p>
+				</li>
+		<% end %>
 	</ul>
-	<% end %>
+<% end %>
