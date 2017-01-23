@@ -1,3 +1,5 @@
 class Link < ApplicationRecord
-  validates :entry, :destination, :phone_num, presence: true
+  has_many :phone_numbers
+
+  validates :entry, :destination, presence: true
 end
