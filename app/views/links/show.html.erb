@@ -4,8 +4,18 @@
 </p>
 
 <p>
-	<strong>Original Link:</strong>
+	<strong>Destination Link:</strong>
 	<%= @link.destination %>
+</p>
+
+<p>
+	<strong>Send this link to your phone!</strong>
+
+<%= form_for @article, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :body, size: "60x12" %>
+  <%= f.submit "Create" %>
+<% end %>
 </p>
 
 <%= link_to 'Edit', edit_link_path(@link) %>
