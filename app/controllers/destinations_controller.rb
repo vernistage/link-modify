@@ -1,8 +1,8 @@
 class DestinationsController < ApplicationController
 
   def show
-    binding.pry
-    actual_link =
+    link = Link.find_by entry: params['entry']
+    redirect_to link.destination
   end
 
 end

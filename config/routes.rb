@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :links
 
-  get '/*' => 'destination#show'
+  get '/:entry' => 'destinations#show'
 
   root 'links#index'
 
