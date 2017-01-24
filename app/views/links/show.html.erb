@@ -1,25 +1,29 @@
-<p>
-	<strong>Entry:</strong>
-	<%= @link.entry %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-heading text-center">
+		<h3 class="panel-title">
+			Entry: <%= @link.entry %>
+		</h3>
+	</div>
+	<div class="panel-body">
+		<p>
+			<strong>Destination Link:</strong>
+			<%= @link.destination %>
+		</p>
 
-<p>
-	<strong>Destination Link:</strong>
-	<%= @link.destination %>
-</p>
+		<p>
+			<strong>Send this link to your phone!</strong>
+			<%= form_tag("/send_sms", method: "post") do %>
+				<%= hidden_field_tag 'link_id', @link.id %>
+			  <%= label_tag(:number, "Enter your number") %>
+			  <%= text_field_tag(:number) %>
+			  <%= submit_tag("Submit") %>
+			<% end %>
+			<% if flash[:notice] %>
+		    <div class="notice"><%= flash[:notice] %></div>
+		  <% end %>
+		</p>
 
-<p>
-	<strong>Send this link to your phone!</strong>
-	<%= form_tag("/send_sms", method: "post") do %>
-		<%= hidden_field_tag 'link_id', @link.id %>
-	  <%= label_tag(:number, "Enter your number") %>
-	  <%= text_field_tag(:number) %>
-	  <%= submit_tag("Submit") %>
-	<% end %>
-	<% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
-</p>
-
-<%= link_to 'Edit', edit_link_path(@link) %>
-<%= link_to 'Back', links_path %>
+		<%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
+		<%= link_to 'Back', links_path, class: "btn btn-default" %>
+	</div>
+</div>
