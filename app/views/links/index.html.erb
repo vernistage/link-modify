@@ -1,15 +1,18 @@
-<h1>Submissions</h1>
-
-<%= link_to 'Add a new link', new_link_path %>
+<div class="jumbotron">
+	<h1 class="text-center">Linker</h1>
+	<p class="text-center"> Make links with words and text the url to yourself </p>
+	<%= link_to 'Add a new link', new_link_path, class: "btn btn-default btn-lg btn-block" %>
+</div>
 <% if @links %>
-	<ul>
-		<% @links.each do |link| %>
-				<li>Entry: <%= link.entry %>
-					<p>Destination: <%= link.destination %></p>
-					<p><%= link_to 'Show', link_path(link) %> | <%= link_to 'Edit', edit_link_path(link) %> | <%= link_to 'Delete', link_path(link),
-							method: :delete,
-							data: { confirm: 'Are you sure' } %></p>
-				</li>
-		<% end %>
-	</ul>
+	<% @links.each do |link| %>
+		<p><h3> Shortlink: <%= link.entry %> </h3> </p>
+		<p>
+			<%= link_to 'Show', link_path(link), class: "btn btn-default" %>
+			<%= link_to 'Edit', edit_link_path(link), class: "btn btn-default"%>
+			<%= link_to 'Delete', link_path(link),
+				method: :delete,
+				data: { confirm: 'Are you sure' },
+				class: "btn btn-default" %>
+		</p>
+	<% end %>
 <% end %>
