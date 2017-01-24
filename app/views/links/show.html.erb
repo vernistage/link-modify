@@ -16,6 +16,9 @@
 	  <%= text_field_tag(:number) %>
 	  <%= submit_tag("Submit") %>
 	<% end %>
+	<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_link_path(@link) %>
