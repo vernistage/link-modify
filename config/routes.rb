@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :links
 
+  get '/*' => 'destination#show'
+
   root 'links#index'
 
 end
