@@ -5,14 +5,12 @@
 </div>
 <% if @links %>
 	<% @links.each do |link| %>
-		<p><h3> Shortlink: <%= link.entry %> </h3> </p>
 		<p>
+			<span style="font-size: 25px">
+				<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+				Shortlink: <%= link.entry %>
+			</span>
 			<%= link_to 'Show', link_path(link), class: "btn btn-default" %>
-			<%= link_to 'Edit', edit_link_path(link), class: "btn btn-default"%>
-			<%= link_to 'Delete', link_path(link),
-				method: :delete,
-				data: { confirm: 'Are you sure' },
-				class: "btn btn-default" %>
 		</p>
 	<% end %>
 <% end %>

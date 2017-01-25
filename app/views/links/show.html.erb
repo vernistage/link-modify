@@ -21,10 +21,12 @@
 		  <% end %>
 		</p>
     <p>
-		  <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
-    </p>
-    <p>
       <%= link_to 'Back', links_path, class: "btn btn-default" %>
+		  <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
+      <%= link_to 'Delete', link_path(@link),
+				method: :delete,
+				data: { confirm: 'Are you sure' },
+				class: "btn btn-default" %>
     </p>
 	</div>
 </div>
