@@ -9,8 +9,8 @@
 			<span style="font-size: 25px">
 				<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 				Shortlink: <%= link.entry %>
+				<%= link_to 'Show', link_path(link), class: "btn btn-default" %>
 			</span>
-			<%= link_to 'Show', link_path(link), class: "btn btn-default" %>
 		</p>
 	<% end %>
 <% end %>
