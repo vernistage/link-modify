@@ -7,17 +7,17 @@
   <div class="panel-body">
 		<%= form_for :link, url: links_path do |f| %>
 			<% if @link.errors.any? %>
-				<div id="error_explanation">
-					<h2>
-						<%= pluralize(@link.errors.count, "error") %>
-						prohibited this article from being saved:
-					</h2>
-					<ul>
-						<% @link.errors.full_messages.each do |msg| %>
-							<li><%= msg %></li>
-						<% end %>
-					</ul>
-				</div>
+        <div class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span>
+  					<%= pluralize(@link.errors.count, "error") %>
+  					prohibited this article from being saved:
+  				<ul>
+  					<% @link.errors.full_messages.each do |msg| %>
+  						<li><%= msg %></li>
+  					<% end %>
+  				</ul>
+  			</div>
 			<% end %>
 		  <p>
 		    <%= f.label :entry %><br>
