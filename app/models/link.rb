@@ -1,3 +1,4 @@
 class Link < ApplicationRecord
-  validates :entry, :destination, presence: true
+  validates :destination, :format => URI::regexp(%w(http https))
+  validates :entry, presence: true, uniqueness: true
 end
