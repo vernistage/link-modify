@@ -10,12 +10,11 @@
 			<%= @link.destination %>
 		</p>
 		<p>
-			<strong>Send this link to your phone!</strong>
 			<%= form_tag("/send_sms", method: "post") do %>
 				<%= hidden_field_tag 'link_id', @link.id %>
 			  <%= label_tag(:number, "Enter your number") %>
 			  <%= text_field_tag(:number) %>
-			  <%= submit_tag("Submit") %>
+			  <%= submit_tag("Send SMS", :class => "btn btn-danger") %>
 			<% end %>
 			<% if flash[:notice] %>
 		    <div class="notice"><%= flash[:notice] %></div>
