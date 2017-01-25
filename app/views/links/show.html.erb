@@ -9,7 +9,6 @@
 			<strong>Destination Link:</strong>
 			<%= @link.destination %>
 		</p>
-
 		<p>
 			<strong>Send this link to your phone!</strong>
 			<%= form_tag("/send_sms", method: "post") do %>
@@ -22,8 +21,11 @@
 		    <div class="notice"><%= flash[:notice] %></div>
 		  <% end %>
 		</p>
-
-		<%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
-		<%= link_to 'Back', links_path, class: "btn btn-default" %>
+    <p>
+		  <%= link_to 'Edit', edit_link_path(@link), class: "btn btn-default" %>
+    </p>
+    <p>
+      <%= link_to 'Back', links_path, class: "btn btn-default" %>
+    </p>
 	</div>
 </div>
