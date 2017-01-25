@@ -12,7 +12,7 @@
 		<p>
 			<%= form_tag("/send_sms", method: "post") do %>
 				<%= hidden_field_tag 'link_id', @link.id %>
-			  <%= label_tag(:number, "Enter your number") %>
+			  <%= label_tag(:number, "Enter your 11-digit number with country code and no spaces or dashes") %>
 			  <%= text_field_tag(:number) %>
 			  <%= submit_tag("Send SMS", :class => "btn btn-danger") %>
 			<% end %>

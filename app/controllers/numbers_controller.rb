@@ -1,7 +1,7 @@
 class NumbersController < ApplicationController
 
   def create
-    to =  params["number"]
+    to =  "+#{params["number"]}"
     @link = Link.find(params['link_id'].to_i)
     host = request.base_url
     message = "Hi, check out this awesome website: #{host}/#{@link.entry}"
