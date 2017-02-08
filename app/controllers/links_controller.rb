@@ -4,6 +4,7 @@ class LinksController < ApplicationController
   end
 
   def show
+    @phone_number = PhoneNumber.new
     @link = Link.find(params[:id])
   end
 

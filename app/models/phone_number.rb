@@ -12,7 +12,7 @@ class PhoneNumber < ApplicationRecord
   def send_pin
     twilio_client.messages.create(
       to: phone_number,
-      from: ENV['TWILIO_PHONE_NUMBER'],
+      from: ENV['PHONE_NUM'],
       body: "Your PIN is #{pin}"
     )
   end
